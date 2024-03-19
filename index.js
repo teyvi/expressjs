@@ -1,4 +1,5 @@
 import express from "express";
+import cors from 'cors'
 import bodyParser from "body-parser";
 import todosRoutes from "./routes/todos.routes.js";
 
@@ -8,7 +9,7 @@ const app = express();
 //Apply middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
-
+app.use(cors());
 
 //Use routes
 app.use(todosRoutes);
